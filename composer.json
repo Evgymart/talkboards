@@ -1,4 +1,6 @@
 {
+    "name": "evgenymart/talkboards",
+    "description": "A reddit-like project",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
