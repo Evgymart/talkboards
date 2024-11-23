@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "TalkBoards\\": "TalkBoards/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "TalkBoards\\Tests\\": "tests/"
         }
     },
     "replace": {
