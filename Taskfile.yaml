@@ -1,5 +1,8 @@
 version: '3'
 
+vars:
+  PHP: '{{if not .LOCALLY}}docker compose exec -it php{{end}}'
+
 env:
   APP_ENV: dev
 
@@ -11,9 +14,20 @@ dotenv:
 
 tasks:
   install:
-    cmd: 'composer install {{.CLI_ARGS}}'
+    cmd: '{{.PHP}} composer install {{.CLI_ARGS}}'
     sources:
       - composer.json
       - composer.lock
     generates:
       - vendor/autoload.php
+  up:
+    cmds:
+      - 'docker compose up --detach --remove-orphans {{.CLI_ARGS}}'
+      - task: install
+  down: 'docker compose down --remove-orphans {{.CLI_ARGS}}'
+  start:
+    cmds:
+      - 'docker compose start {{.CLI_ARGS}}'
+      - task: install
+  stop: 'docker compose stop {{.CLI_ARGS}}'
+  php: '{{.PHP}} sh'
