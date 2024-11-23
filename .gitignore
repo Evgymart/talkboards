@@ -1,3 +1,4 @@
+/.task/
 
 ###> symfony/framework-bundle ###
 /.env.local
