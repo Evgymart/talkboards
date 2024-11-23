@@ -1,0 +1,19 @@
+version: '3'
+
+env:
+  APP_ENV: dev
+
+dotenv:
+  - '.env.{{APP_ENV}}.local'
+  - '.env.{{APP_ENV}}'
+  - '.env.local'
+  - '.env'
+
+tasks:
+  install:
+    cmd: 'composer install {{.CLI_ARGS}}'
+    sources:
+      - composer.json
+      - composer.lock
+    generates:
+      - vendor/autoload.php
