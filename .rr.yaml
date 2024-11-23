@@ -6,9 +6,11 @@ server:
     - APP_RUNTIME: Baldinof\RoadRunnerBundle\Runtime\Runtime
 
 http:
-  address: 0.0.0.0:8080
+  address: 0.0.0.0:80
   pool:
     debug: false
+    supervisor:
+      max_worker_memory: 100
   middleware: [ "static", "gzip" ]
   uploads:
     forbid: [ ".php", ".exe", ".bat" ]
