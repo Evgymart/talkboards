@@ -31,3 +31,6 @@ tasks:
       - task: install
   stop: 'docker compose stop {{.CLI_ARGS}}'
   php: '{{.PHP}} sh'
+  test:
+    deps: [ install ]
+    cmd: '{{.PHP}} vendor/bin/phpunit {{.CLI_ARGS}}'
