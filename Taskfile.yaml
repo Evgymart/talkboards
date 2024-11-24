@@ -34,3 +34,12 @@ tasks:
   test:
     deps: [ install ]
     cmd: '{{.PHP}} vendor/bin/phpunit {{.CLI_ARGS}}'
+
+  fixcs:
+    deps: [install]
+    cmd: '{{.PHP}} vendor/bin/php-cs-fixer fix --diff --verbose {{.CLI_ARGS}}'
+  lint:
+    cmds:
+      - task: fixcs
+        vars:
+          CLI_ARGS: "--dry-run {{.CLI_ARGS}}"
