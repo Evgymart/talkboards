@@ -12,6 +12,6 @@ final class TestTest extends TestCase
 {
     public function testTest(): void
     {
-        $this->assertTrue(true);
+        self::assertTrue(true);
     }
 }
