@@ -5,6 +5,7 @@ services:
     environment:
       HISTFILE: /root/history/.history
       ENV: /root/.bashrc
+      PHP_CS_FIXER_IGNORE_ENV: 1 # TODO: Remove when PHPCS supports PHP8.4
     volumes:
       - .:/var/www/html:cached
       - php_history:/root/history
