@@ -51,3 +51,13 @@ tasks:
       - task: fixcs
         vars:
           CLI_ARGS: "--dry-run {{.CLI_ARGS}}"
+
+  rector-fix:
+    deps: [var, install]
+    cmd: '{{.PHP}} vendor/bin/rector process {{.CLI_ARGS}}'
+  rector:
+    deps: [var, install]
+    cmds:
+      - task: rector-fix
+        vars:
+          CLI_ARGS: "--dry-run {{.CLI_ARGS}}"
