@@ -31,12 +31,20 @@ tasks:
       - task: install
   stop: 'docker compose stop {{.CLI_ARGS}}'
   php: '{{.PHP}} sh'
+
+  var:
+    cmd: mkdir -p var
+    status:
+      - test -d var
+    silent: true
+    internal: true
+
   test:
-    deps: [ install ]
+    deps: [var, install]
     cmd: '{{.PHP}} vendor/bin/phpunit {{.CLI_ARGS}}'
 
   fixcs:
-    deps: [install]
+    deps: [var, install]
     cmd: '{{.PHP}} vendor/bin/php-cs-fixer fix --diff --verbose {{.CLI_ARGS}}'
   lint:
     cmds:
