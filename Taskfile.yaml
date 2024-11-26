@@ -61,3 +61,6 @@ tasks:
       - task: rector-fix
         vars:
           CLI_ARGS: "--dry-run {{.CLI_ARGS}}"
+  phpstan:
+    deps: [var, install]
+    cmd: '{{.PHP}} vendor/bin/phpstan analyse src tests {{.CLI_ARGS}}'
