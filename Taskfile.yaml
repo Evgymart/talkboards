@@ -64,4 +64,4 @@ tasks:
 
   phpstan:
     deps: [var, install]
-    cmd: '{{.PHP}} vendor/bin/phpstan analyse src tests {{.CLI_ARGS}}'
+    cmd: '{{.PHP}} vendor/bin/phpstan analyse -c phpstan.neon {{.CLI_ARGS}}'
