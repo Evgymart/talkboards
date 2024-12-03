@@ -8,6 +8,7 @@ use PhpParser\Node;
 use PhpParser\Node\Expr\Empty_;
 use PhpParser\Node\Expr\Exit_;
 use PhpParser\Node\Expr\FuncCall;
+use PhpParser\Node\Stmt\Echo_;
 use PHPStan\Analyser\Scope;
 use PHPStan\Rules\Rule as PHPStanRule;
 use PHPStan\Rules\RuleErrorBuilder;
@@ -59,6 +60,14 @@ final readonly class ForbiddenFunctions implements PHPStanRule
             ];
         }
 
+        if ($node instanceof Echo_) {
+            return [
+                RuleErrorBuilder::message('The use of echo is banned.')
+                ->identifier('custom.bannedExit')
+                ->build(),
+            ];
+        }
+
         return [];
     }
 
@@ -71,6 +80,8 @@ final readonly class ForbiddenFunctions implements PHPStanRule
             'print_r',
             'var_dump',
             'eval',
+            'print',
+            'var_export',
         ];
     }
 }
