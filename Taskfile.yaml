@@ -65,3 +65,7 @@ tasks:
   phpstan:
     deps: [var, install]
     cmd: '{{.PHP}} vendor/bin/phpstan analyse -c phpstan.neon {{.CLI_ARGS}}'
+
+  composer-require-check:
+    deps: [var, install]
+    cmd: '{{.PHP}} vendor/bin/composer-require-checker check {{.CLI_ARGS}}'
