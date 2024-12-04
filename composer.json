@@ -35,7 +35,10 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "TalkBoards\\": "tests/"
+            "TalkBoards\\": [
+                "tests/",
+                "src-dev/"
+            ]
         }
     },
     "replace": {
