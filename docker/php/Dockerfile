@@ -1,6 +1,16 @@
 #syntax=docker/dockerfile:1.4
 FROM spiralscout/roadrunner:2024.2 AS roadrunner
 FROM php:8.4-cli-alpine3.19
+
+ARG UID
+ARG GID
+
+RUN <<EOF
+  groupmod --gid=${GID} www-data
+  usermod --uid=${UID} --gid=${GID} www-data
+  chown -R www-data:www-data /var/www
+EOF
+
 RUN mkdir /root/history
 RUN apk update && \
     apk add --no-cache patch && \
@@ -16,3 +26,4 @@ RUN install-php-extensions @composer && \
 RUN install-php-extensions opcache intl sockets
 WORKDIR /var/www/html
 CMD rr serve -d -c .rr.dev.yaml
+USER www-data
