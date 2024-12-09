@@ -2,6 +2,9 @@ services:
   php:
     build:
       context: docker/php
+      args:
+        - UID=${UID:-1000}
+        - GID=${GID:-1000}
     environment:
       HISTFILE: /root/history/.history
       ENV: /root/.bashrc
