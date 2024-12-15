@@ -30,7 +30,7 @@ tasks:
       - 'docker compose start {{.CLI_ARGS}}'
       - task: install
   stop: 'docker compose stop {{.CLI_ARGS}}'
-  php: '{{.PHP}} sh'
+  php: '{{.PHP}} bash'
 
   var:
     cmd: mkdir -p var

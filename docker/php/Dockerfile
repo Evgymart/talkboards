@@ -1,6 +1,6 @@
 #syntax=docker/dockerfile:1.4
 FROM spiralscout/roadrunner:2024.2 AS roadrunner
-FROM php:8.4-cli-alpine3.19
+FROM php:8.4-cli
 
 ARG UID
 ARG GID
@@ -12,10 +12,12 @@ RUN <<EOF
 EOF
 
 RUN mkdir /root/history
-RUN apk update && \
-    apk add --no-cache patch && \
-    apk del && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt update \
+    && apt install -y --no-install-recommends  \
+      patch \
+      bash \
+    && apt clean \
+    && rm -rf /var/lib/apt/lists/*
 COPY --link php.ini $PHP_INI_DIR/conf.d/
 RUN cp "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 COPY --from=roadrunner /usr/bin/rr /usr/bin/rr
