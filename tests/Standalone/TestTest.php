@@ -12,9 +12,6 @@ final class TestTest extends TestCase
 {
     public function testTest(): void
     {
-        /**
-         * @phpstan-ignore-next-line
-         */
         self::assertTrue(true);
     }
 }
