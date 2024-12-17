@@ -18,6 +18,7 @@
     "config": {
         "allow-plugins": {
             "bamarni/composer-bin-plugin": true,
+            "ergebnis/composer-normalize": true,
             "php-http/discovery": true,
             "symfony/flex": true,
             "symfony/runtime": true
@@ -59,6 +60,7 @@
     },
     "require-dev": {
         "bamarni/composer-bin-plugin": "^1.8.2",
+        "ergebnis/composer-normalize": "^2.45",
         "friendsofphp/php-cs-fixer": ">=3.65",
         "phpstan/phpstan": "^2.0.3",
         "phpstan/phpstan-phpunit": "^2.0.1",
