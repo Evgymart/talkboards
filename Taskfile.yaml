@@ -66,6 +66,17 @@ tasks:
     deps: [var, install]
     cmd: '{{.PHP}} vendor/bin/phpstan analyse -c phpstan.neon {{.CLI_ARGS}}'
 
+  composer-normalize-fix:
+    deps: [install]
+    cmds:
+      - '{{.PHP}} composer bump'
+      - '{{.PHP}} composer normalize --diff {{.CLI_ARGS}}'
+  composer-normalize:
+    cmds:
+      - task: composer-normalize-fix
+        vars:
+          CLI_ARGS: '--dry-run {{.CLI_ARGS}}'
+
   composer-require-check:
     deps: [var, install]
     cmd: '{{.PHP}} vendor/bin/composer-require-checker check {{.CLI_ARGS}}'
