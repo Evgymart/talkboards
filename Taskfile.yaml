@@ -69,3 +69,7 @@ tasks:
   composer-require-check:
     deps: [var, install]
     cmd: '{{.PHP}} vendor/bin/composer-require-checker check {{.CLI_ARGS}}'
+
+  composer-unused-check:
+    deps: [ var, install ]
+    cmd: '{{.PHP}} vendor/bin/composer-unused {{.CLI_ARGS}}'
