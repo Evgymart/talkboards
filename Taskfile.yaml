@@ -69,7 +69,7 @@ tasks:
   composer-normalize-fix:
     deps: [install]
     cmds:
-      - '{{.PHP}} composer bump'
+      - '{{.PHP}} composer bump {{.CLI_ARGS}}'
       - '{{.PHP}} composer normalize --diff {{.CLI_ARGS}}'
   composer-normalize:
     cmds:
