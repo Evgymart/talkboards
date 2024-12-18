@@ -88,3 +88,7 @@ tasks:
   composer-unused-check:
     deps: [ var, install ]
     cmd: '{{.PHP}} vendor/bin/composer-unused {{.CLI_ARGS}}'
+
+  deptrac-directories:
+    deps: [ var, install ]
+    cmd: '{{.PHP}} vendor/bin/deptrac analyze --config-file=deptrac.directories.yaml --cache-file=var/.deptrac.directories.cache {{.CLI_ARGS}}'
