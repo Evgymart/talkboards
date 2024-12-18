@@ -92,3 +92,16 @@ tasks:
   deptrac-directories:
     deps: [ var, install ]
     cmd: '{{.PHP}} vendor/bin/deptrac analyze --config-file=deptrac.directories.yaml --cache-file=var/.deptrac.directories.cache {{.CLI_ARGS}}'
+
+  check:
+    cmds:
+      - task: lint
+      - task: phpstan
+      - task: rector
+      - task: deptrac-directories
+      - task: test
+      - task: composer-validate
+      - task: composer-audit
+      - task: composer-normalize
+      - task: composer-require-check
+      - task: composer-unused-check
