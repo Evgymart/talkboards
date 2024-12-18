@@ -9,7 +9,7 @@
         "symfony/dotenv": "^7.1.9",
         "symfony/flex": "^2.4.7",
         "symfony/framework-bundle": "^7.1.6",
-        "symfony/http-kernel": "~7.1.0",
+        "symfony/http-kernel": "~7.1.9",
         "symfony/runtime": "^7.1.7",
         "symfony/yaml": "^7.1.6"
     },
@@ -21,7 +21,7 @@
         "phpstan/phpstan-phpunit": "^2.0.2",
         "phpunit/phpunit": "^11.5.1",
         "phpyh/coding-standard": "^2.6.2",
-        "qossmic/deptrac": "^2.0"
+        "qossmic/deptrac": "^2.0.4"
     },
     "replace": {
         "symfony/polyfill-ctype": "*",
