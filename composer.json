@@ -20,7 +20,8 @@
         "phpstan/phpstan": "^2.0.4",
         "phpstan/phpstan-phpunit": "^2.0.2",
         "phpunit/phpunit": "^11.5.1",
-        "phpyh/coding-standard": "^2.6.2"
+        "phpyh/coding-standard": "^2.6.2",
+        "qossmic/deptrac": "^2.0"
     },
     "replace": {
         "symfony/polyfill-ctype": "*",
