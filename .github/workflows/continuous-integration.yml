@@ -20,7 +20,10 @@ jobs:
       - uses: arduino/setup-task@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - run: task check
+      - name: install baramani composer bin files
+        run: composer bin all install
+      - name: run CI checks
+        run: task check
         env:
           LOCALLY: 1
           PHP_CS_FIXER_IGNORE_ENV: 1 # TODO: Remove when CS FIXER supports PHP 8.4
