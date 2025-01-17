@@ -4,7 +4,12 @@ declare(strict_types=1);
 
 namespace TalkBoards\Feature\Demo\HelloWorld;
 
-final readonly class HelloWorld
+use TalkBoards\Infrastructure\MessageBus\Message;
+
+/**
+ * @implements Message<string>
+ */
+final readonly class HelloWorld implements Message
 {
     public function __construct(
         public string $parameter,
