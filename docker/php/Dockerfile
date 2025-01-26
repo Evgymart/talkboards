@@ -13,7 +13,7 @@ EOF
 
 RUN mkdir /root/history
 RUN apt update \
-    && apt install -y --no-install-recommends  \
+    && apt install -y --no-install-recommends \
       patch \
       bash \
     && apt clean \
@@ -25,7 +25,8 @@ ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/do
 RUN chmod +x /usr/local/bin/install-php-extensions
 RUN install-php-extensions @composer && \
     ln -s composer /usr/local/bin/c
-RUN install-php-extensions opcache intl sockets
+RUN install-php-extensions opcache intl sockets pdo_pgsql pgsql
+
 WORKDIR /var/www/html
 CMD rr serve -d -c .rr.dev.yaml
 USER www-data
