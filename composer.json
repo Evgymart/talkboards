@@ -32,8 +32,8 @@
         "bamarni/composer-bin-plugin": "^1.8.2",
         "ergebnis/composer-normalize": "^2.45",
         "friendsofphp/php-cs-fixer": ">=3.66",
-        "phpstan/phpstan": "^2.1.1",
-        "phpstan/phpstan-phpunit": "^2.0.3",
+        "phpstan/phpstan": "^2.1.2",
+        "phpstan/phpstan-phpunit": "^2.0.4",
         "phpunit/phpunit": "^11.5.3",
         "phpyh/coding-standard": "^2.6.2",
         "qossmic/deptrac": "^2.0.4"
