@@ -1,5 +1,5 @@
 /.task/
-/docker-compose.override.yaml
+/compose.override.yaml
 
 ###> symfony/framework-bundle ###
 /.env.local

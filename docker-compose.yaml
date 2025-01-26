@@ -14,5 +14,22 @@ services:
       - php_history:/root/history
     ports:
       - '8080:80'
+
+  database:
+    image: postgres:${POSTGRES_VERSION:-17}
+    env_file:
+      - ./.env
+    healthcheck:
+      test: pg_isready -d database
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    volumes:
+      - database_data:/var/lib/postgresql/data:rw
+      - ./docker/postgres/postgresql.conf:/etc/postgresql/postgresql.conf
+    ports:
+      - '5433:5432'
+
 volumes:
   php_history: ~
+  database_data:
