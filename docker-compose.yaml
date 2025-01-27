@@ -27,8 +27,6 @@ services:
     volumes:
       - database_data:/var/lib/postgresql/data:rw
       - ./docker/postgres/postgresql.conf:/etc/postgresql/postgresql.conf
-    ports:
-      - '5433:5432'
 
 volumes:
   php_history: ~
