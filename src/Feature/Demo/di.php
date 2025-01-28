@@ -7,8 +7,8 @@ namespace TalkBoards\Feature\Demo;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use TalkBoards\Feature\Demo\HelloWorld\Handler\HelloWorldHandler;
 
-return static function (ContainerConfigurator $configurator): void {
-    $services = $configurator->services();
+return static function (ContainerConfigurator $di): void {
+    $services = $di->services();
 
     $services
         ->defaults()

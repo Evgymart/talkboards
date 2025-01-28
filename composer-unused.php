@@ -14,4 +14,6 @@ return static fn(Configuration $config): Configuration => $config
     ->addNamedFilter(NamedFilter::fromString('phpdocumentor/reflection-docblock'))
     ->addNamedFilter(NamedFilter::fromString('phpstan/phpdoc-parser'))
     ->addNamedFilter(NamedFilter::fromString('symfony/property-access'))
-    ->addNamedFilter(NamedFilter::fromString('symfony/property-info'));
+    ->addNamedFilter(NamedFilter::fromString('symfony/property-info'))
+    ->addNamedFilter(NamedFilter::fromString('doctrine/doctrine-bundle'))
+    ->addNamedFilter(NamedFilter::fromString('doctrine/doctrine-migrations-bundle'));
