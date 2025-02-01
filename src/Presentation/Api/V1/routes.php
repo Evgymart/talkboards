@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TalkBoards\Api\V1;
+namespace TalkBoards\Presentation\Api\V1;
 
 use Symfony\Component\Routing\Loader\Configurator\RoutingConfigurator;
 

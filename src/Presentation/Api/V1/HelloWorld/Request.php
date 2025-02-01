@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TalkBoards\Api\V1\HelloWorld;
+namespace TalkBoards\Presentation\Api\V1\HelloWorld;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
