@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TalkBoards\Infrastructure\SymfonyHttpKernel;
+namespace TalkBoards\Infrastructure\SymfonyIntegration\HttpKernel;
 
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 use Symfony\Component\HttpFoundation\JsonResponse;
