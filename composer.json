@@ -58,7 +58,10 @@
     "autoload": {
         "psr-4": {
             "TalkBoards\\": "src/"
-        }
+        },
+        "files": [
+            "src/Infrastructure/functions.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
