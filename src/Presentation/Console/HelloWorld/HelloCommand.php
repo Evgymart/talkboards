@@ -14,7 +14,7 @@ use TalkBoards\Infrastructure\SymfonyIntegration\Console\Output;
 final class HelloCommand extends ConsoleCommand
 {
     public function __construct(
-        private MessageBus $messageBus,
+        private readonly MessageBus $messageBus,
     ) {
         parent::__construct(self::name());
     }
