@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TalkBoards\Feature\Demo\HelloWorld;
+namespace TalkBoards\Application\Demo\HelloWorld;
 
 use TalkBoards\Infrastructure\MessageBus\Message;
 

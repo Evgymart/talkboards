@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace TalkBoards\Feature\Demo\HelloWorld\Handler;
+namespace TalkBoards\Application\Demo\HelloWorld\Handler;
 
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
-use TalkBoards\Feature\Demo\HelloWorld\HelloWorld;
+use TalkBoards\Application\Demo\HelloWorld\HelloWorld;
 
 #[AsMessageHandler]
 final readonly class HelloWorldHandler

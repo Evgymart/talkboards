@@ -6,7 +6,7 @@ namespace TalkBoards\Presentation\Console\HelloWorld;
 
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
-use TalkBoards\Feature\Demo\HelloWorld\HelloWorld;
+use TalkBoards\Application\Demo\HelloWorld\HelloWorld;
 use TalkBoards\Infrastructure\MessageBus\MessageBus;
 use TalkBoards\Infrastructure\SymfonyIntegration\Console\ConsoleCommand;
 use TalkBoards\Infrastructure\SymfonyIntegration\Console\Output;

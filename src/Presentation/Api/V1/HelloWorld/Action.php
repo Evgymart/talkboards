@@ -6,7 +6,7 @@ namespace TalkBoards\Presentation\Api\V1\HelloWorld;
 
 use Symfony\Component\HttpKernel\Attribute\MapRequestPayload;
 use Symfony\Component\Routing\Annotation\Route;
-use TalkBoards\Feature\Demo\HelloWorld\HelloWorld;
+use TalkBoards\Application\Demo\HelloWorld\HelloWorld;
 use TalkBoards\Infrastructure\MessageBus\MessageBus;
 
 final readonly class Action
