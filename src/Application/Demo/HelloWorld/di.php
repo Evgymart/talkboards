@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace TalkBoards\Feature\Demo;
+namespace TalkBoards\Application\Demo\HelloWorld;
 
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use TalkBoards\Feature\Demo\HelloWorld\Handler\HelloWorldHandler;
+use TalkBoards\Application\Demo\HelloWorld\Handler\HelloWorldHandler;
 
 return static function (ContainerConfigurator $di): void {
     $services = $di->services();
