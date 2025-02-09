@@ -62,7 +62,8 @@
             "TalkBoards\\": "src/"
         },
         "files": [
-            "src/Infrastructure/functions.php"
+            "src/Infrastructure/functions.php",
+            "src/Infrastructure/DependencyInjection/functions.php"
         ]
     },
     "autoload-dev": {

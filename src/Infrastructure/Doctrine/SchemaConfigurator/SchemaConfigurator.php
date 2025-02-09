@@ -12,12 +12,8 @@ final readonly class SchemaConfigurator
         private Schema $schema,
     ) {}
 
-    public function table(string $name, ?string $comment = null): TableConfigurator
+    public function table(string $name): TableConfigurator
     {
-        $table = $this->schema
-            ->createTable($name)
-            ->setComment($comment);
-
-        return new TableConfigurator($table);
+        return new TableConfigurator($this->schema->createTable($name));
     }
 }
