@@ -10,7 +10,6 @@ return static fn(Configuration $config): Configuration => $config
     ->addNamedFilter(NamedFilter::fromString('symfony/dotenv'))
     ->addNamedFilter(NamedFilter::fromString('symfony/flex'))
     ->addNamedFilter(NamedFilter::fromString('symfony/runtime'))
-    ->addNamedFilter(NamedFilter::fromString('symfony/yaml'))
     ->addNamedFilter(NamedFilter::fromString('phpdocumentor/reflection-docblock'))
     ->addNamedFilter(NamedFilter::fromString('phpstan/phpdoc-parser'))
     ->addNamedFilter(NamedFilter::fromString('symfony/property-access'))
