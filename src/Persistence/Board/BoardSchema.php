@@ -12,11 +12,11 @@ final readonly class BoardSchema implements SchemaSubscriber
     public function configureSchema(SchemaConfigurator $schema): void
     {
         $schema
-            ->table('board.board')
-            ->uuidColumn('id')
-            ->stringColumn('name')
-            ->textColumn('description')
-            ->dateColumn('created_at')
-            ->primaryKey('id');
+            ->table(name: 'board.board')
+            ->uuidColumn(name: 'board_id')
+            ->stringColumn(name: 'name')
+            ->textColumn(name: 'description')
+            ->dateColumn(name: 'created_at')
+            ->primaryKey(column: 'board_id');
     }
 }
