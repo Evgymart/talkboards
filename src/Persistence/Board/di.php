@@ -9,5 +9,6 @@ use TalkBoards\Infrastructure\DependencyInjection\Module;
 
 return static function (ContainerConfigurator $di): void {
     Module::create($di)
-        ->set(BoardSchema::class);
+        ->set(BoardSchema::class)
+        ->set(PostSchema::class);
 };
