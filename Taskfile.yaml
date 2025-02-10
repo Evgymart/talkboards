@@ -51,6 +51,14 @@ tasks:
     deps: [var, install]
     cmd: '{{.PHP}} bin/console doctrine:migrations:diff'
 
+  doctrine-validate:
+    deps: [var, install]
+    cmd: '{{.PHP}} bin/console doctrine:schema:validate'
+
+  schema-validate:
+    deps: [ var, install ]
+    cmd: '{{.PHP}} bin/console schema:validate'
+
   fixcs:
     deps: [var, install]
     cmd: '{{.PHP}} vendor/bin/php-cs-fixer fix --diff --verbose {{.CLI_ARGS}}'
