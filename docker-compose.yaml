@@ -6,7 +6,7 @@ services:
         - UID=${UID:-1000}
         - GID=${GID:-1000}
     environment:
-      HISTFILE: /root/history/.history
+      HISTFILE: /var/www/html/var/.bash_history
       ENV: /root/.bashrc
       PHP_CS_FIXER_IGNORE_ENV: 1 # TODO: Remove when PHPCS supports PHP8.4
     volumes:
