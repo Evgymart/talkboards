@@ -43,6 +43,14 @@ tasks:
     deps: [var, install]
     cmd: '{{.PHP}} vendor/bin/phpunit {{.CLI_ARGS}}'
 
+  migrations-migrate:
+    deps: [ var, install ]
+    cmd: '{{.PHP}} bin/console doctrine:migrations:migrate'
+
+  migrations-diff:
+    deps: [var, install]
+    cmd: '{{.PHP}} bin/console doctrine:migrations:diff'
+
   fixcs:
     deps: [var, install]
     cmd: '{{.PHP}} vendor/bin/php-cs-fixer fix --diff --verbose {{.CLI_ARGS}}'
