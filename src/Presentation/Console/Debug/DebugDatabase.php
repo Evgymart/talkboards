@@ -12,7 +12,7 @@ use TalkBoards\Infrastructure\SymfonyIntegration\Console\Output;
 final class DebugDatabase extends ConsoleCommand
 {
     public function __construct(
-        private PostgresConnection $connection,
+        private readonly PostgresConnection $connection,
     ) {
         parent::__construct(self::name());
     }

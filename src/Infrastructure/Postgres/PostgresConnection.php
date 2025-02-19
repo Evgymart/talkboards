@@ -7,6 +7,7 @@ namespace TalkBoards\Infrastructure\Postgres;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DriverManager;
 use Doctrine\DBAL\Exception;
+use Doctrine\DBAL\Result;
 
 final readonly class PostgresConnection
 {
@@ -34,7 +35,7 @@ final readonly class PostgresConnection
      * @param array<non-empty-string, mixed> $params
      * @throws Exception
      */
-    public function execute(string $sql, array $params = []): mixed
+    public function execute(string $sql, array $params = []): Result
     {
         $stmt = $this->connection->prepare($sql);
 
