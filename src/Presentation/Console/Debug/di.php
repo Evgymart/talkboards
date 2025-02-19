@@ -12,11 +12,5 @@ return static function (ContainerConfigurator $di): void {
         ->defaults()
         ->autowire()
         ->autoconfigure()
-        ->set(DebugDatabase::class)->args([
-            '$host' => '%env(string:key:host:url:DATABASE_URL)%',
-            '$port' => '%env(int:key:port:url:DATABASE_URL)%',
-            '$user' => '%env(string:key:user:url:DATABASE_URL)%',
-            '$password' => '%env(string:key:pass:url:DATABASE_URL)%',
-            '$dbName' => '%env(string:key:path:url:DATABASE_URL)%',
-        ]);
+        ->set(DebugDatabase::class);
 };
