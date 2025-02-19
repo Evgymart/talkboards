@@ -24,8 +24,8 @@ final class DebugDatabase extends ConsoleCommand
 
     protected function doExecute(InputInterface $input, Output $output): int
     {
-        $result = $this->connection->execute('select * from board.board');
-        $output->dump($result->fetchAllAssociative());
+        $result = $this->connection->execute('select * from board.board', [], Board::class);
+        $output->dump($result);
 
         return self::SUCCESS;
     }
