@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace TalkBoards\Infrastructure\Postgres;
 
 use CuyZ\Valinor\Mapper\MappingError;
+use CuyZ\Valinor\Mapper\Source\Source;
 use CuyZ\Valinor\Mapper\TreeMapper;
 use CuyZ\Valinor\MapperBuilder;
 use Doctrine\DBAL\Connection;
@@ -72,7 +73,8 @@ final readonly class PostgresConnection
         }
 
         try {
-            $mapped = $this->mapper->map($type, $data);
+            $source = Source::array($data)->camelCaseKeys();
+            $mapped = $this->mapper->map($type, $source);
             if ($mapped instanceof $type) {
                 return $mapped;
             }
