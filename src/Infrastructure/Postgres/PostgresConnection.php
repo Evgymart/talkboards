@@ -21,19 +21,15 @@ final readonly class PostgresConnection
      * @throws DatabaseException
      */
     public function __construct(
-        string $host,
-        int $port,
-        string $user,
-        string $password,
-        string $dbName,
+        ConnectionData $connectionData,
     ) {
         try {
             $this->connection = DriverManager::getConnection([
-                'dbname' => $dbName,
-                'user' => $user,
-                'password' => $password,
-                'host' => $host,
-                'port' => $port,
+                'dbname' => $connectionData->dbName,
+                'user' => $connectionData->user,
+                'password' => $connectionData->password,
+                'host' => $connectionData->host,
+                'port' => $connectionData->port,
                 'driver' => 'pdo_pgsql',
             ]);
 
