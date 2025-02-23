@@ -7,7 +7,6 @@ namespace TalkBoards\Infrastructure\Postgres;
 use CuyZ\Valinor\Mapper\MappingError;
 use CuyZ\Valinor\Mapper\TreeMapper;
 use CuyZ\Valinor\MapperBuilder;
-use DEPTRAC_INTERNAL\___PHPSTORM_HELPERS\object;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DriverManager;
 
