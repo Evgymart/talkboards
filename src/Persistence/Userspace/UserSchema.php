@@ -14,7 +14,7 @@ final readonly class UserSchema implements SchemaSubscriber
         $schema
             ->table(name: 'userspace.user')
             ->uuidColumn(name: 'user_id')
-            ->dateColumn(name: 'created_at')
+            ->dateTimeColumn(name: 'created_at')
             ->primaryKey(column: 'user_id');
     }
 }

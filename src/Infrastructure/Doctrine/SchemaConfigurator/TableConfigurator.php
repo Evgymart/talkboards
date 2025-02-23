@@ -183,15 +183,4 @@ final readonly class TableConfigurator
 
         return $this;
     }
-
-    public function dateColumn(string $name, bool $nullable = false, mixed $default = null): self
-    {
-        $this
-            ->table
-            ->addColumn($name, Types::DATE_IMMUTABLE)
-            ->setNotnull(!$nullable)
-            ->setDefault($default);
-
-        return $this;
-    }
 }

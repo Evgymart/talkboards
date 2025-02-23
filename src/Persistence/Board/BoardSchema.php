@@ -16,7 +16,7 @@ final readonly class BoardSchema implements SchemaSubscriber
             ->uuidColumn(name: 'board_id')
             ->stringColumn(name: 'name')
             ->textColumn(name: 'description')
-            ->dateColumn(name: 'created_at')
+            ->dateTimeColumn(name: 'created_at')
             ->primaryKey(column: 'board_id');
     }
 }

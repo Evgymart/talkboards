@@ -18,8 +18,8 @@ final readonly class PostSchema implements SchemaSubscriber
             ->uuidColumn(name: 'user_id')
             ->stringColumn(name: 'title', length: 255)
             ->textColumn(name: 'text')
-            ->dateColumn(name: 'created_at')
-            ->dateColumn(name: 'updated_at')
+            ->dateTimeColumn(name: 'created_at')
+            ->dateTimeColumn(name: 'updated_at')
             ->primaryKey('post_id', 'board_id');
     }
 }

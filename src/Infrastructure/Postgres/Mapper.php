@@ -8,6 +8,7 @@ use CuyZ\Valinor\Mapper\MappingError;
 use CuyZ\Valinor\Mapper\Source\Source;
 use CuyZ\Valinor\Mapper\TreeMapper;
 use CuyZ\Valinor\MapperBuilder;
+use TalkBoards\Infrastructure\Uuid\Uuid;
 
 final readonly class Mapper
 {
@@ -15,7 +16,10 @@ final readonly class Mapper
 
     public function __construct()
     {
-        $this->mapper = (new MapperBuilder())->mapper();
+        $this->mapper = (new MapperBuilder())
+            ->registerConstructor(Uuid::class, Uuid::fromString(...))
+            ->supportDateFormats('Y-m-d H:i:s+P')
+            ->mapper();
     }
 
     /**

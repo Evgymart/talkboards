@@ -24,10 +24,14 @@ final readonly class PostgresConnection
         try {
             $connection = $this->wrapper->getConnection();
             // TODO: Make sure this works
-            /** @var array<non-empty-string, non-empty-string> $data */
+            /** @var array<non-empty-string, non-empty-string>|false $data */
             $data = $connection->prepare($sql)
                  ->executeQuery($params)
                  ->fetchAssociative();
+
+            if ($data === false) {
+                return [];
+            }
 
             if ($type === null) {
                 return $data;
