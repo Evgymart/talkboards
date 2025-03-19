@@ -5,7 +5,7 @@
     "type": "project",
     "require": {
         "php": "^8.4",
-        "baldinof/roadrunner-bundle": "^3.2.0",
+        "baldinof/roadrunner-bundle": "^3.2.2",
         "cuyz/valinor": "^1.14.4",
         "doctrine/dbal": "^3.9.4",
         "doctrine/doctrine-bundle": "^2.13.2",
@@ -41,7 +41,7 @@
         "friendsofphp/php-cs-fixer": ">=3.66",
         "phpstan/phpstan": "^2.1.8",
         "phpstan/phpstan-phpunit": "^2.0.4",
-        "phpunit/phpunit": "^11.5.12",
+        "phpunit/phpunit": "^11.5.13",
         "phpyh/coding-standard": "^2.6.2",
         "qossmic/deptrac": "^2.0.4"
     },
