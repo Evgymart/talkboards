@@ -31,7 +31,9 @@
         "symfony/serializer": "~7.1.11",
         "symfony/validator": "~7.1.11",
         "symfony/var-dumper": "~7.1.11",
-        "symfony/yaml": "^7.1.11"
+        "symfony/yaml": "^7.1.11",
+        "thesis/postgres": "dev-master",
+        "thesis/thesis": "dev-master"
     },
     "require-dev": {
         "bamarni/composer-bin-plugin": "^1.8.2",
@@ -57,6 +59,16 @@
     "conflict": {
         "symfony/symfony": "*"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Etherlord/postgres-thesis"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/Etherlord/thesis"
+        }
+    ],
     "minimum-stability": "stable",
     "prefer-stable": true,
     "autoload": {

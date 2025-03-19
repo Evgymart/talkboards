@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "187ec2a196da4250944882fcbb1d6bf7",
+    "content-hash": "63a6e26e07b410447f5ae776608dce4c",
     "packages": [
         {
             "name": "baldinof/roadrunner-bundle",
@@ -5638,6 +5638,142 @@
             "time": "2025-01-07T12:50:05+00:00"
         },
         {
+            "name": "thesis/postgres",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Etherlord/postgres-thesis.git",
+                "reference": "7354f1134e4d6bc0652478aa9cc78d17d27b95df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Etherlord/postgres-thesis/zipball/7354f1134e4d6bc0652478aa9cc78d17d27b95df",
+                "reference": "7354f1134e4d6bc0652478aa9cc78d17d27b95df",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pdo": "*",
+                "php": "^8.0",
+                "thesis/thesis": "dev-master"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "icanhazstring/composer-unused": "^0.7",
+                "maglnet/composer-require-checker": "^3.3",
+                "phpunit/phpunit": "^9.5",
+                "psalm/plugin-phpunit": "~0.15",
+                "vimeo/psalm": "^4.8"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Thesis\\Postgres\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Thesis\\Postgres\\": "tests/"
+                }
+            },
+            "scripts": {
+                "fixcs": [
+                    "php-cs-fixer fix -v"
+                ],
+                "psalm": [
+                    "psalm --no-diff --show-info --threads=4"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Valentin Udaltsov",
+                    "homepage": "https://github.com/vudaltsov"
+                },
+                {
+                    "name": "Pavel Ivanov",
+                    "homepage": "https://github.com/Etherlord"
+                }
+            ],
+            "description": "PostgreSQL build of Thesis based on PDO",
+            "support": {
+                "source": "https://github.com/Etherlord/postgres-thesis/tree/master"
+            },
+            "time": "2024-03-10T14:19:20+00:00"
+        },
+        {
+            "name": "thesis/thesis",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Etherlord/thesis.git",
+                "reference": "43e2222b2f4b60041e7d096e21a92e6d40773377"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Etherlord/thesis/zipball/43e2222b2f4b60041e7d096e21a92e6d40773377",
+                "reference": "43e2222b2f4b60041e7d096e21a92e6d40773377",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pdo": "*",
+                "php": "^8.0",
+                "psr/container": "^1.0 || ^2.0",
+                "psr/log": "^1.0 || ^2.0 || ^3.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.1",
+                "icanhazstring/composer-unused": "^0.7",
+                "maglnet/composer-require-checker": "^3.3",
+                "phpunit/phpunit": "^9.5",
+                "psalm/plugin-phpunit": "^0.16",
+                "vimeo/psalm": "^4.10"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Thesis\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Thesis\\": "tests/"
+                }
+            },
+            "scripts": {
+                "fixcs": [
+                    "php-cs-fixer fix -v"
+                ],
+                "psalm": [
+                    "psalm --no-diff --show-info --threads=4"
+                ],
+                "check-require": [
+                    "composer-require-checker check --config-file=composer-require-checker.json"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Valentin Udaltsov",
+                    "homepage": "https://github.com/vudaltsov"
+                },
+                {
+                    "name": "Pavel Ivanov",
+                    "homepage": "https://github.com/Etherlord"
+                }
+            ],
+            "description": "A fancy tool to use SQL in PHP with ease",
+            "support": {
+                "source": "https://github.com/Etherlord/thesis/tree/master"
+            },
+            "time": "2021-09-08T08:28:15+00:00"
+        },
+        {
             "name": "webmozart/assert",
             "version": "1.11.0",
             "source": {
@@ -9577,7 +9713,10 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": {
+        "thesis/postgres": 20,
+        "thesis/thesis": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
