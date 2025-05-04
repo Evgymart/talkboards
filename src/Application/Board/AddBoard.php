@@ -2,11 +2,15 @@
 
 declare(strict_types=1);
 
-namespace TalkBoards\Application\Board\Search;
+namespace TalkBoards\Application\Board;
 
+use TalkBoards\Infrastructure\MessageBus\Message;
 use TalkBoards\Infrastructure\Uuid\Uuid;
 
-final readonly class Board
+/**
+ * @implements Message<void>
+ */
+final readonly class AddBoard implements Message
 {
     public function __construct(
         public Uuid $boardId,

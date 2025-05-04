@@ -39,13 +39,27 @@ tasks:
     silent: true
     internal: true
 
-  test:
+  test-unit:
     deps: [var, install]
-    cmd: '{{.PHP}} vendor/bin/phpunit {{.CLI_ARGS}}'
+    cmd: '{{.PHP}} vendor/bin/phpunit --group=unit {{.CLI_ARGS}}'
+
+  test-integration:
+    deps: [var, install]
+    cmds:
+      - '{{.PHP}} bin/console doctrine:database:create --if-not-exists --env=test'
+      - '{{.PHP}} bin/console doctrine:migrations:migrate --no-interaction --env=test'
+      - '{{.PHP}} vendor/bin/phpunit --group=integration {{.CLI_ARGS}}'
+      - '{{.PHP}} bin/console doctrine:database:drop --force --env=test'
+  env:
+    APP_ENV: test
+
+  doctrine-create:
+    deps: [ var, install ]
+    cmd: '{{.PHP}} bin/console doctrine:database:create --if-not-exists {{.CLI_ARGS}}'
 
   migrations-migrate:
     deps: [ var, install ]
-    cmd: '{{.PHP}} bin/console doctrine:migrations:migrate'
+    cmd: '{{.PHP}} bin/console doctrine:migrations:migrate --no-interaction {{.CLI_ARGS}}'
 
   migrations-diff:
     deps: [var, install]
@@ -119,7 +133,8 @@ tasks:
       - task: phpstan
       - task: rector
       - task: deptrac-directories
-      - task: test
+      - task: test-unit
+      - task: test-integration
       - task: composer-validate
       - task: composer-audit
       - task: composer-normalize

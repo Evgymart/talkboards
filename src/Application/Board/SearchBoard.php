@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace TalkBoards\Application\Board\Search;
+namespace TalkBoards\Application\Board;
 
 use TalkBoards\Infrastructure\MessageBus\Message;
 
 /**
- * @implements Message<string>
+ * @implements Message<list<Board>>
  */
 final readonly class SearchBoard implements Message
 {

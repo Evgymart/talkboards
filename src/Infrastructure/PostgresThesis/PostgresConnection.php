@@ -33,7 +33,6 @@ final readonly class PostgresConnection
         Hydrator $hydrator,
     ) {
         $driver = new PostgresPdoDriver(valueResolverRegistry: $valueResolverRegistry, hydrator: $hydrator);
-
         $this->connection = $driver->connect(
             new PostgresDsn(
                 host: $host,

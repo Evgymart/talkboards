@@ -6,7 +6,7 @@ namespace TalkBoards\Presentation\Api\V1\Board\Search;
 
 use Symfony\Component\HttpKernel\Attribute\MapRequestPayload;
 use Symfony\Component\Routing\Attribute\Route;
-use TalkBoards\Application\Board\Search\SearchBoard;
+use TalkBoards\Application\Board\SearchBoard;
 use TalkBoards\Infrastructure\MessageBus\MessageBus;
 
 final readonly class Action
@@ -17,7 +17,7 @@ final readonly class Action
         Request $request,
         MessageBus $messageBus,
     ): Response {
-        /** @var \TalkBoards\Application\Board\Search\Board[] $boards */
+        /** @var \TalkBoards\Application\Board\Board[] $boards */
         $boards = $messageBus->execute(new SearchBoard(
             $request->query,
         ));

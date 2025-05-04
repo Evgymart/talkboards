@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace TalkBoards\Application\Board\Search\Handlers;
+namespace TalkBoards\Application\Board\Handlers;
 
 use Symfony\Component\Messenger\Attribute\AsMessageHandler;
-use TalkBoards\Application\Board\Search\Board;
-use TalkBoards\Application\Board\Search\SearchBoard;
+use TalkBoards\Application\Board\Board;
+use TalkBoards\Application\Board\SearchBoard;
 use TalkBoards\Infrastructure\PostgresThesis\PostgresConnection;
 use TalkBoards\Infrastructure\Uuid\Uuid;
 use Thesis\StatementContext\Tsx;
@@ -21,14 +21,14 @@ final readonly class SearchBoardHandler
     /**
      * @return Board[]
      */
-    public function __invoke(SearchBoard $searchBoard): array
+    public function __invoke(SearchBoard $message): array
     {
         $result = $this->connection->execute(
             static fn(Tsx $tsx): string => <<<SQL
                     select board_id, name, description, created_at
                     from board.board
-                    where name ilike {$tsx('%' . $searchBoard->query . '%')}
-                    or description ilike {$tsx('%' . $searchBoard->query . '%')}
+                    where name ilike {$tsx('%' . $message->query . '%')}
+                    or description ilike {$tsx('%' . $message->query . '%')}
                 SQL,
         )->toList();
 

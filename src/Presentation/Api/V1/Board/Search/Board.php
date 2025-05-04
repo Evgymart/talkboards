@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TalkBoards\Presentation\Api\V1\Board\Search;
 
-use TalkBoards\Application\Board\Search\Board as AppBoard;
+use TalkBoards\Application\Board\Board as AppBoard;
 
 final readonly class Board
 {
